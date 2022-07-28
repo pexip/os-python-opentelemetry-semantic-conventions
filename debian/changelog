@@ -1,0 +1,5 @@
+python-opentelemetry-semantic-conventions (0.30b1-0pexip1) pexip-bullseye; urgency=medium
+
+  * Prepare Pexip Packaging
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 28 Jul 2022 12:24:49 +0100

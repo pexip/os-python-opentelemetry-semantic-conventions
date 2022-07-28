@@ -1,0 +1,19 @@
+Source: python-opentelemetry-semantic-conventions
+Section: python
+Priority: optional
+Maintainer: Pexip AS <packaging@pexip.com>
+Build-Depends: debhelper-compat (= 13), dh-python, python3-setuptools, python3-all
+Standards-Version: 4.5.1
+Homepage: https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-semantic-conventions
+Rules-Requires-Root: no
+
+Package: python3-opentelemetry-semantic-conventions
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Description: OpenTelemetry semantic conventions (Python 3)
+ OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument,
+ generate, collect, and export telemetry data (metrics, logs, and traces) to
+ help you analyze your software’s performance and behavior.
+ .
+ This package installs the semantic conventions library for Python 3.
+
