@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: opentelemetry-semantic-conventions
-Version: 0.30b1
+Version: 0.33b0
 Summary: OpenTelemetry Semantic Conventions
 Home-page: https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-semantic-conventions
 Author: OpenTelemetry Authors
@@ -59,5 +59,3 @@ References
 * `OpenTelemetry Project <https://opentelemetry.io/>`_
 * `OpenTelemetry Semantic Conventions YAML Definitions <https://github.com/open-telemetry/opentelemetry-specification/tree/main/semantic_conventions>`_
 * `generate.sh script <https://github.com/open-telemetry/opentelemetry-python/blob/main/scripts/semconv/generate.sh>`_
-
-
