@@ -1,3 +1,9 @@
+python-opentelemetry-semantic-conventions (0.33b1-0pexip1) pexip-bullseye; urgency=medium
+
+  * New upstream release.
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Wed, 14 Sep 2022 14:48:06 +0100
+
 python-opentelemetry-semantic-conventions (0.30b1-0pexip2) pexip-bullseye; urgency=medium
 
   * Bullseye rebuild for ARM64 inclusion
