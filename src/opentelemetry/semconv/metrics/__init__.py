@@ -12,18 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
+# pylint: disable=too-many-lines
 
-import setuptools
 
-BASE_DIR = os.path.dirname(__file__)
-VERSION_FILENAME = os.path.join(
-    BASE_DIR, "src", "opentelemetry", "semconv", "version.py"
-)
-PACKAGE_INFO = {}
-with open(VERSION_FILENAME, encoding="utf-8") as f:
-    exec(f.read(), PACKAGE_INFO)
+class MetricInstruments:
 
-setuptools.setup(
-    version=PACKAGE_INFO["__version__"],
-)
+    HTTP_SERVER_DURATION = "http.server.duration"
+
+    HTTP_SERVER_REQUEST_SIZE = "http.server.request.size"
+
+    HTTP_SERVER_RESPONSE_SIZE = "http.server.response.size"
+
+    HTTP_SERVER_ACTIVE_REQUESTS = "http.server.active_requests"
+
+    HTTP_CLIENT_DURATION = "http.client.duration"
+
+    HTTP_CLIENT_REQUEST_SIZE = "http.client.request.size"
+
+    HTTP_CLIENT_RESPONSE_SIZE = "http.client.response.size"
+
+    DB_CLIENT_CONNECTIONS_USAGE = "db.client.connections.usage"
