@@ -5,6 +5,9 @@ Maintainer: Pexip AS <packaging@pexip.com>
 Build-Depends: debhelper-compat (= 13), dh-python, python3-setuptools, python3-all,
  pybuild-plugin-pyproject,
  python3-hatchling,
+ python3-opentelemetry-api (<< 1.32.2~),
+ python3-opentelemetry-api (>= 1.32.1~),
+ python3-deprecated (>= 1.2.6~),
 Standards-Version: 4.5.1
 Homepage: https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-semantic-conventions
 Rules-Requires-Root: no
