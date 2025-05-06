@@ -11,13 +11,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
-
-from importlib.util import find_spec
-from unittest import TestCase
 
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+from typing import Final
+
+HTTP_CLIENT_REQUEST_DURATION: Final = "http.client.request.duration"
+"""
+Duration of HTTP client requests
+Instrument: histogram
+Unit: s
+"""
+
+
+HTTP_SERVER_REQUEST_DURATION: Final = "http.server.request.duration"
+"""
+Duration of HTTP server requests
+Instrument: histogram
+Unit: s
+"""

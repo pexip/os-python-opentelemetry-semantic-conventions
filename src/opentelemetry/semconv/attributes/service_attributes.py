@@ -11,13 +11,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
 
-from importlib.util import find_spec
-from unittest import TestCase
+from typing import Final
 
+SERVICE_NAME: Final = "service.name"
+"""
+Logical name of the service.
+Note: MUST be the same for all instances of horizontally scaled services. If the value was not specified, SDKs MUST fallback to `unknown_service:` concatenated with [`process.executable.name`](process.md), e.g. `unknown_service:bash`. If `process.executable.name` is not available, the value MUST be set to `unknown_service`.
+"""
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+SERVICE_VERSION: Final = "service.version"
+"""
+The version string of the service API or implementation. The format is not defined by these conventions.
+"""

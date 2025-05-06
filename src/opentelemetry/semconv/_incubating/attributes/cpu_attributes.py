@@ -11,13 +11,35 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
 
-from importlib.util import find_spec
-from unittest import TestCase
+from enum import Enum
+from typing import Final
+
+CPU_LOGICAL_NUMBER: Final = "cpu.logical_number"
+"""
+The logical CPU number [0..n-1].
+"""
+
+CPU_MODE: Final = "cpu.mode"
+"""
+The mode of the CPU.
+"""
 
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+class CpuModeValues(Enum):
+    USER = "user"
+    """user."""
+    SYSTEM = "system"
+    """system."""
+    NICE = "nice"
+    """nice."""
+    IDLE = "idle"
+    """idle."""
+    IOWAIT = "iowait"
+    """iowait."""
+    INTERRUPT = "interrupt"
+    """interrupt."""
+    STEAL = "steal"
+    """steal."""
+    KERNEL = "kernel"
+    """kernel."""

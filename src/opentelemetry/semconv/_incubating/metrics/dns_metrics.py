@@ -11,13 +11,24 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
-
-from importlib.util import find_spec
-from unittest import TestCase
 
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+from typing import Final
+
+from opentelemetry.metrics import Histogram, Meter
+
+DNS_LOOKUP_DURATION: Final = "dns.lookup.duration"
+"""
+Measures the time taken to perform a DNS lookup
+Instrument: histogram
+Unit: s
+"""
+
+
+def create_dns_lookup_duration(meter: Meter) -> Histogram:
+    """Measures the time taken to perform a DNS lookup"""
+    return meter.create_histogram(
+        name=DNS_LOOKUP_DURATION,
+        description="Measures the time taken to perform a DNS lookup.",
+        unit="s",
+    )
