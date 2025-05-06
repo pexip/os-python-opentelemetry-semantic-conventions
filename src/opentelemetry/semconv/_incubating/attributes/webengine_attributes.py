@@ -11,13 +11,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
 
-from importlib.util import find_spec
-from unittest import TestCase
+from typing import Final
 
+WEBENGINE_DESCRIPTION: Final = "webengine.description"
+"""
+Additional description of the web engine (e.g. detailed version and edition information).
+"""
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+WEBENGINE_NAME: Final = "webengine.name"
+"""
+The name of the web engine.
+"""
+
+WEBENGINE_VERSION: Final = "webengine.version"
+"""
+The version of the web engine.
+"""

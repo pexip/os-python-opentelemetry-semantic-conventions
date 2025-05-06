@@ -11,13 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
 
-from importlib.util import find_spec
-from unittest import TestCase
+from typing import Final
 
+SESSION_ID: Final = "session.id"
+"""
+A unique id to identify a session.
+"""
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+SESSION_PREVIOUS_ID: Final = "session.previous_id"
+"""
+The previous `session.id` for this user, when known.
+"""

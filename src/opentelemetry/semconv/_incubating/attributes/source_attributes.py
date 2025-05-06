@@ -11,13 +11,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
 
-from importlib.util import find_spec
-from unittest import TestCase
+from typing import Final
 
+SOURCE_ADDRESS: Final = "source.address"
+"""
+Source address - domain name if available without reverse DNS lookup; otherwise, IP address or Unix domain socket name.
+Note: When observed from the destination side, and when communicating through an intermediary, `source.address` SHOULD represent the source address behind any intermediaries, for example proxies, if it's available.
+"""
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+SOURCE_PORT: Final = "source.port"
+"""
+Source port number.
+"""

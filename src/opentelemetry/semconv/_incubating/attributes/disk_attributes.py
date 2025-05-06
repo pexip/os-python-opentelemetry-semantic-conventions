@@ -11,13 +11,18 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# type: ignore
 
-from importlib.util import find_spec
-from unittest import TestCase
+from enum import Enum
+from typing import Final
+
+DISK_IO_DIRECTION: Final = "disk.io.direction"
+"""
+The disk IO operation direction.
+"""
 
 
-class TestSemanticConventions(TestCase):
-    def test_semantic_conventions(self):
-        if find_spec("opentelemetry.semconv") is None:
-            self.fail("opentelemetry-semantic-conventions not installed")
+class DiskIoDirectionValues(Enum):
+    READ = "read"
+    """read."""
+    WRITE = "write"
+    """write."""
